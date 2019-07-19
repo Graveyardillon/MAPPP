@@ -1,12 +1,10 @@
 use Mix.Config
 
 # Configure your database
-config :react_phoenix, ReactPhoenix.Repo,
+config :map_app, MapApp.Repo,
   username: "postgres",
   password: "password",
-  # database: "react_phoenix_dev",
   database: "map_app_dev",
-  hostname: "localhost",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
@@ -17,7 +15,7 @@ config :react_phoenix, ReactPhoenix.Repo,
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with webpack to recompile .js and .css sources.
-config :react_phoenix, ReactPhoenixWeb.Endpoint,
+config :map_app, MapAppWeb.Endpoint,
   http: [port: 4000],
   debug_errors: true,
   code_reloader: true,
@@ -57,13 +55,13 @@ config :react_phoenix, ReactPhoenixWeb.Endpoint,
 # different ports.
 
 # Watch static and templates for browser reloading.
-config :react_phoenix, ReactPhoenixWeb.Endpoint,
+config :map_app, MapAppWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/react_phoenix_web/{live,views}/.*(ex)$",
-      ~r"lib/react_phoenix_web/templates/.*(eex)$"
+      ~r"lib/map_app_web/{live,views}/.*(ex)$",
+      ~r"lib/map_app_web/templates/.*(eex)$"
     ]
   ]
 

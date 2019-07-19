@@ -7,15 +7,15 @@
 # General application configuration
 use Mix.Config
 
-config :react_phoenix,
-  ecto_repos: [ReactPhoenix.Repo]
+config :map_app,
+  ecto_repos: [MapApp.Repo]
 
 # Configures the endpoint
-config :react_phoenix, ReactPhoenixWeb.Endpoint,
+config :map_app, MapAppWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "B+U8abkI4CEUxbJ3lMYfuAFQ3Ds8JnCtOx9gc57lpygTxASgBQ/6HxfKWAx5h6xt",
-  render_errors: [view: ReactPhoenixWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: ReactPhoenix.PubSub, adapter: Phoenix.PubSub.PG2]
+  secret_key_base: "Wrh06DgZV/NxFzqzluJoUrs0YT7l8p1CK6OLmdAFiaq2t0On8qWOw4DykAK5m/vW",
+  render_errors: [view: MapAppWeb.ErrorView, accepts: ~w(html json)],
+  pubsub: [name: MapApp.PubSub, adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
 config :logger, :console,

@@ -1,4 +1,4 @@
-defmodule ReactPhoenixWeb.ChannelCase do
+defmodule MapAppWeb.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
   channel tests.
@@ -21,15 +21,15 @@ defmodule ReactPhoenixWeb.ChannelCase do
       use Phoenix.ChannelTest
 
       # The default endpoint for testing
-      @endpoint ReactPhoenixWeb.Endpoint
+      @endpoint MapAppWeb.Endpoint
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(ReactPhoenix.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(MapApp.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(ReactPhoenix.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(MapApp.Repo, {:shared, self()})
     end
 
     :ok

@@ -1,4 +1,4 @@
-defmodule ReactPhoenix.DataCase do
+defmodule MapApp.DataCase do
   @moduledoc """
   This module defines the setup for tests requiring
   access to the application's data layer.
@@ -16,20 +16,20 @@ defmodule ReactPhoenix.DataCase do
 
   using do
     quote do
-      alias ReactPhoenix.Repo
+      alias MapApp.Repo
 
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
-      import ReactPhoenix.DataCase
+      import MapApp.DataCase
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(ReactPhoenix.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(MapApp.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(ReactPhoenix.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(MapApp.Repo, {:shared, self()})
     end
 
     :ok

@@ -1,4 +1,4 @@
-defmodule ReactPhoenixWeb.ConnCase do
+defmodule MapAppWeb.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -19,18 +19,18 @@ defmodule ReactPhoenixWeb.ConnCase do
     quote do
       # Import conveniences for testing with connections
       use Phoenix.ConnTest
-      alias ReactPhoenixWeb.Router.Helpers, as: Routes
+      alias MapAppWeb.Router.Helpers, as: Routes
 
       # The default endpoint for testing
-      @endpoint ReactPhoenixWeb.Endpoint
+      @endpoint MapAppWeb.Endpoint
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(ReactPhoenix.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(MapApp.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(ReactPhoenix.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(MapApp.Repo, {:shared, self()})
     end
 
     {:ok, conn: Phoenix.ConnTest.build_conn()}

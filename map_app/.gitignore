@@ -20,7 +20,7 @@
 # *.ez
 
 # Ignore package tarball (built via "mix hex.build").
-# react_phoenix-*.tar
+# map_app-*.tar
 
 # If NPM crashes, it generates a log, let's ignore it too.
 # npm-debug.log
