@@ -22,6 +22,10 @@ config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
 
+config :map_app, MapApp.Accounts.Guardian,
+  issuer: "map_app",
+  secret_key: "MVCVqsLikZtYh32vlU8yxNrNQu6RY+3eL3Z1kUFUd5kRGThSLfQrCj1GwmQjBQls"
+
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
