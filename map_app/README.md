@@ -1,4 +1,4 @@
-# MapApp
+# ReactPhoenix
 
 To start your Phoenix server:
 

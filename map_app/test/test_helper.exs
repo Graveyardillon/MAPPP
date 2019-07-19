@@ -1,2 +1,2 @@
 ExUnit.start()
-Ecto.Adapters.SQL.Sandbox.mode(MapApp.Repo, :manual)
+Ecto.Adapters.SQL.Sandbox.mode(ReactPhoenix.Repo, :manual)

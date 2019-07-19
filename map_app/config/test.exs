@@ -1,16 +1,16 @@
 use Mix.Config
 
 # Configure your database
-config :map_app, MapApp.Repo,
+config :react_phoenix, ReactPhoenix.Repo,
   username: "postgres",
   password: "postgres",
-  database: "map_app_test",
+  database: "react_phoenix_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
 
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
-config :map_app, MapAppWeb.Endpoint,
+config :react_phoenix, ReactPhoenixWeb.Endpoint,
   http: [port: 4002],
   server: false
 
