@@ -16,9 +16,11 @@
       <td><%= user.email %></td>
 
       <td>
-        <%= link "Show", to: Routes.user_path(@conn, :show, user) %>
-        <%= link "Edit", to: Routes.user_path(@conn, :edit, user) %>
-        <%= link "Delete", to: Routes.user_path(@conn, :delete, user), method: :delete, data: [confirm: "Are you sure?"] %>
+        <span><%= link "Show", to: Routes.user_path(@conn, :show, user) %></span>
+        <%= if user.id == current_user(@conn).id do %>
+        <span><%= link "Edit", to: Routes.user_path(@conn, :edit, user) %></span>
+        <span><%= link "Delete", to: Routes.user_path(@conn, :delete, user), method: :delete, data: [confirm: "Are you sure?"] %></span>
+        <% end %>
       </td>
     </tr>
 <% end %>
