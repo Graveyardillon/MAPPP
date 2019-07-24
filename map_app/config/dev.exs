@@ -3,7 +3,7 @@ use Mix.Config
 # Configure your database
 config :map_app, MapApp.Repo,
   username: "postgres",
-  password: "password",
+  password: "postgres",
   database: "map_app_dev",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
