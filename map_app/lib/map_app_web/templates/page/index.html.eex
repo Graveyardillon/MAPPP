@@ -1,2 +1,18 @@
 <div id="root">
 </div>
+
+<%= link to: "/signin" do %>
+  signup
+<%= end %>
+
+<br>
+
+<%= link to: "/login" do %>
+  signin
+<%= end %>
+
+<br>
+
+<%= link to: "/users" do %>
+  users
+<%= end %>
