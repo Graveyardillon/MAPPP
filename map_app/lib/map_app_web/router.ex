@@ -16,6 +16,7 @@ defmodule MapAppWeb.Router do
   pipeline :auth do
     plug MapApp.Accounts.Pipeline
   end
+
   pipeline :ensure_auth do
     plug Guardian.Plug.EnsureAuthenticated
   end
@@ -34,6 +35,7 @@ defmodule MapAppWeb.Router do
   scope "/", MapAppWeb do
     pipe_through [:browser, :auth, :ensure_auth]
     resources "/users", UserController, except: [:new, :create]
+    post "/users/add", UserController, :add
   end
 
   # Other scopes may use custom stacks.

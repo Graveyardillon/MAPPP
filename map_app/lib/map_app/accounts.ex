@@ -108,7 +108,9 @@ defmodule MapApp.Accounts do
     Repo.one(query)
     |> check_password(plain_text_password)
   end
+
   defp check_password(nil, _), do: {:error, "Incorrect username or password"}
+
   defp check_password(user, plain_text_password) do
     case Bcrypt.checkpw(plain_text_password, user.password) do
       true -> {:ok, user}
@@ -118,6 +120,10 @@ defmodule MapApp.Accounts do
 
   def current_user(conn) do
     Guardian.Plug.current_resource(conn)
+  end
+
+  def add_user(conn) do
+    
   end
 
 end

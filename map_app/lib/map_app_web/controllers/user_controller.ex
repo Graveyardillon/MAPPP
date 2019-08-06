@@ -42,7 +42,7 @@ defmodule MapAppWeb.UserController do
 
   def update(conn, %{"user" => user_params}) do
     user = conn.assigns.current_user
-    
+
     case Accounts.update_user(user, user_params) do
       {:ok, user} ->
         conn
@@ -61,6 +61,10 @@ defmodule MapAppWeb.UserController do
     |> Guardian.Plug.sign_out()
     |> put_flash(:info, "User deleted successfully.")
     |> redirect(to: Routes.page_path(conn, :index))
+  end
+
+  def add(conn, _) do
+    
   end
 
   defp is_authorized(conn, _) do
