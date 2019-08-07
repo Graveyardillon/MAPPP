@@ -8,5 +8,9 @@ defmodule MapApp.Accounts.Relation do
     field :status, :boolean
   end
 
-  
+  def changeset(relation, attrs) do
+    relation
+    |> cast(attrs, [:sourceID, :destinationID, :status])
+    |> validate_required([:sourceID, :destinationID])
+  end
 end
