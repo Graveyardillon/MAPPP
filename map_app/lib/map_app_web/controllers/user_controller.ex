@@ -4,6 +4,7 @@ defmodule MapAppWeb.UserController do
   alias MapApp.Accounts
   alias MapApp.Accounts.User
   alias MapApp.Accounts.Guardian
+  alias MapApp.Relations
 
   plug :is_authorized when action in [:edit, :update, :delete]
 
@@ -63,7 +64,11 @@ defmodule MapAppWeb.UserController do
     |> redirect(to: Routes.page_path(conn, :index))
   end
 
-  def add(conn, _) do
+  def add(conn, %{"id" => id}) do
+    user1 = conn.assigns.current_user
+    user2 = Accounts.get_user!(id)
+    # user1が自分でuser2が追加したい相手
+
     
   end
 

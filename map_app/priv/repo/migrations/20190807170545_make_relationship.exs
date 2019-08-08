@@ -3,9 +3,9 @@ defmodule MapApp.Repo.Migrations.MakeRelationship do
 
   def change do
     create table(:relation) do
-      field :sourceID, :string
-      field :destinationID, :string
-      field :status, :boolean
+      add :sourceID, :string
+      add :destinationID, :string
+      add :status, :boolean
     end
   end
 end

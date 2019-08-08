@@ -122,8 +122,4 @@ defmodule MapApp.Accounts do
     Guardian.Plug.current_resource(conn)
   end
 
-  def add_user(conn) do
-    
-  end
-
 end
