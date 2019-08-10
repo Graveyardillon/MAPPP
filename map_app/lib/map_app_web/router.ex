@@ -35,6 +35,8 @@ defmodule MapAppWeb.Router do
   scope "/", MapAppWeb do
     pipe_through [:browser, :auth, :ensure_auth]
     resources "/users", UserController, except: [:new, :create]
+    get "/add", RelationController, :add
+    #post "/add", RelationController, :add
   end
 
   # Other scopes may use custom stacks.

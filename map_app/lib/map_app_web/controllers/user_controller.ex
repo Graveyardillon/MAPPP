@@ -64,14 +64,6 @@ defmodule MapAppWeb.UserController do
     |> redirect(to: Routes.page_path(conn, :index))
   end
 
-  def add(conn, %{"id" => id}) do
-    user1 = conn.assigns.current_user
-    user2 = Accounts.get_user!(id)
-    # user1が自分でuser2が追加したい相手
-
-    
-  end
-
   defp is_authorized(conn, _) do
     current_user = Accounts.current_user(conn)
       if current_user.id == String.to_integer(conn.params["id"]) do
