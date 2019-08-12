@@ -3,14 +3,13 @@ defmodule MapApp.Relations.Relation do
   import Ecto.Changeset
 
   schema "relation" do
-    field :sourceID
-    field :destinationID
+    field :sourceID, :integer
+    field :destinationID, :string
     field :status, :boolean
   end
 
-  #def changeset(relation, attrs) do
-  #  relation
-  #  |> cast(attrs, [:sourceID, :destinationID, :status])
-  #  |> validate_required([:sourceID, :destinationID])
-  #end
+  def changeset(relation, attrs) do
+    relation
+    |> cast(attrs, [:sourceID, :destinationID, :status])
+  end
 end

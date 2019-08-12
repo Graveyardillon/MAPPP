@@ -1,0 +1,5 @@
+added!
+
+<%= link to: "/" do %>
+  home
+<%= end %>
