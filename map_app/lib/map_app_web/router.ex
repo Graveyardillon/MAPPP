@@ -37,6 +37,8 @@ defmodule MapAppWeb.Router do
     resources "/users", UserController, except: [:new, :create]
     get "/add", RelationController, :index
     post "/add", RelationController, :add
+    get "/incoming", RelationController, :incoming
+    post "/incoming", RelationController, :accept
   end
 
   # Other scopes may use custom stacks.

@@ -24,7 +24,7 @@
         <%= form_for @conn, Routes.relation_path(@conn, :add), fn f -> %>
 
           <%= hidden_input f, :destinationID, value: user.id %>
-          <%= submit "Add"  %>
+          <%= submit "Add" %>
 
         <% end %>
       </td>

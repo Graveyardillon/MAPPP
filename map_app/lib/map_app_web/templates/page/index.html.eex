@@ -16,3 +16,9 @@
 <%= link to: "/users" do %>
   users
 <%= end %>
+
+<br>
+
+<%= link to: "/incoming" do %>
+  incoming
+<% end %>

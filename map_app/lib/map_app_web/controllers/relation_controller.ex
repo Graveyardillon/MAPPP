@@ -3,6 +3,7 @@ defmodule MapAppWeb.RelationController do
 
   alias MapApp.Relations
   alias MapApp.Accounts
+  alias MapApp.Accounts.User
 
   #require IEx
 
@@ -16,6 +17,24 @@ defmodule MapAppWeb.RelationController do
 
     Relations.add_user(conn, current_user.id, destinationID)
     redirect(conn, to: "/add")
+  end
+
+  # incomingのgetリクエストに対して反応する関数incoming()
+  def incoming(conn, _) do
+    current_user = Accounts.current_user(conn)
+
+    inc = Relations.get_incoming_users(conn, current_user.id)
+
+    render(conn, "incoming.html", users: inc)
+  end
+
+  # incomingのpostリクエストに対して反応する関数accept()
+  def accept(conn, %{"destinationID" => destinationID}) do
+    current_user = Accounts.current_user(conn)
+
+    Relations.accept_user(conn, current_user.id, destinationID)
+
+    redirect(conn, to: "/incoming")
   end
 
 end
