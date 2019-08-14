@@ -7,6 +7,8 @@ defmodule MapApp.Relations do
   alias MapApp.Accounts.User
   alias MapApp.Relations.Relation
 
+  require IEx
+
   def add_user(_conn, sourceUser, destinationUser) do
     input = Relation.changeset(%Relation{}, %{sourceID: sourceUser,
                       destinationID: destinationUser,
@@ -20,11 +22,22 @@ defmodule MapApp.Relations do
     # 数値から文字列へキャストして型をモデルに合わせる
     currentUserID_str = Integer.to_string(currentUserID)
 
+    userList = []
     inc = Relation
           |> where([u], u.destinationID == ^currentUserID_str)
           |> where([u], not u.status)
           |> Repo.all()
 
+    # Relationテーブルを利用して適切なUserテーブルの行を返す
+    Enum.map(inc,
+              fn r ->
+                User
+                |> where([u], u.id == ^r.destinationID)
+                |> Repo.one()
+
+                # IEx.pry
+              end
+            )
   end
 
   def accept_user(_conn, sourceUser, destinationUser) do

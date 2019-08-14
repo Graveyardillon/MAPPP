@@ -5,7 +5,7 @@ defmodule MapAppWeb.RelationController do
   alias MapApp.Accounts
   alias MapApp.Accounts.User
 
-  #require IEx
+  require IEx
 
   def index(conn, _) do
     render(conn, "index.html")
@@ -24,6 +24,7 @@ defmodule MapAppWeb.RelationController do
     current_user = Accounts.current_user(conn)
 
     inc = Relations.get_incoming_users(conn, current_user.id)
+    IEx.pry
 
     render(conn, "incoming.html", users: inc)
   end
