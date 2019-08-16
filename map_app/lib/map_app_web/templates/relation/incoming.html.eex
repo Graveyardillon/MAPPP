@@ -23,7 +23,7 @@
 
           <%= form_for @conn, Routes.relation_path(@conn, :accept), fn f -> %>
 
-            <% hidden_input f, :destinationID, value: user.id %>
+            <%= hidden_input f, :destinationID, value: user.id %>
             <%= submit "Accept" %>
           <% end %>
         </td>

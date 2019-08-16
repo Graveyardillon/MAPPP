@@ -33,7 +33,6 @@ defmodule MapAppWeb.RelationController do
     current_user = Accounts.current_user(conn)
 
     Relations.accept_user(conn, current_user.id, destinationID)
-
     redirect(conn, to: "/incoming")
   end
 
