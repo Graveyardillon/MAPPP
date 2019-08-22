@@ -31,7 +31,7 @@ defmodule MapApp.Relations do
     Enum.map(inc,
               fn r ->
                 User
-                |> where([u], u.id == ^r.destinationID)
+                |> where([u], u.id == ^r.sourceID)
                 |> Repo.one()
 
                 # IEx.pry
@@ -46,7 +46,8 @@ defmodule MapApp.Relations do
     Relation
      |> where([u], u.sourceID == ^destinationUser)
      |> where([u], u.destinationID == ^sourceUser)
-     |> Repo.update_all(set: [status: false])
+     |> Relation.changeset(%{status: true})
+     |> Repo.update!()
 
   end
 end
