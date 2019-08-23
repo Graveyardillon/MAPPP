@@ -26,6 +26,9 @@ config :map_app, MapApp.Accounts.Guardian,
   issuer: "map_app",
   secret_key: "MVCVqsLikZtYh32vlU8yxNrNQu6RY+3eL3Z1kUFUd5kRGThSLfQrCj1GwmQjBQls"
 
+config :google_maps,
+  api_key: "AIzaSyDkMyxeL5Zw3kWRvIPq48sQGPIUuJ9zdTc"
+
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 

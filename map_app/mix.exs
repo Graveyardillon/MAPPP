@@ -20,7 +20,7 @@ defmodule MapApp.MixProject do
   def application do
     [
       mod: {MapApp.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :google_maps]
     ]
   end
 
@@ -45,7 +45,8 @@ defmodule MapApp.MixProject do
       {:plug_cowboy, "~> 2.0"},
       {:guardian, "~> 1.1"},
       {:comeonin, "~> 4.1"},
-      {:bcrypt_elixir, "~> 1.1"}
+      {:bcrypt_elixir, "~> 1.1"},
+      {:google_maps, "~> 0.11"}
     ]
   end
 

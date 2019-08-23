@@ -1,24 +1,41 @@
-<div id="root">
-</div>
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <div id="root">
+    </div>
 
-<%= link to: "/signin" do %>
-  signup
-<%= end %>
+    <iframe
+      width="100%"
+      height="600px"
+      marginwidth="0"
+      marginheight="0"
+      frameborder="0"
+      style="border:0"
+      src="https://www.google.com/maps/embed/v1/view?key=AIzaSyDkMyxeL5Zw3kWRvIPq48sQGPIUuJ9zdTc&center=42.3394299,-71.0906958&zoom=16" allowfullscreen>
+    </iframe>
 
-<br>
+    <%= link to: "/signin" do %>
+      signup
+    <%= end %>
 
-<%= link to: "/login" do %>
-  signin
-<%= end %>
+    <br>
 
-<br>
+    <%= link to: "/login" do %>
+      signin
+    <%= end %>
 
-<%= link to: "/users" do %>
-  users
-<%= end %>
+    <br>
 
-<br>
+    <%= link to: "/users" do %>
+      users
+    <%= end %>
 
-<%= link to: "/incoming" do %>
-  incoming
-<% end %>
+    <br>
+
+    <%= link to: "/incoming" do %>
+      incoming
+    <% end %>
+  </body>
+</html>
