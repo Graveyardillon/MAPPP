@@ -8,7 +8,7 @@ defmodule MapApp.Relations.Relation do
     field :status, :boolean
   end
 
-  def changeset(relation, attrs) do
+  def relation_changeset(relation, attrs \\ %{}) do
     relation
     |> cast(attrs, [:sourceID, :destinationID, :status])
   end

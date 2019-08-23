@@ -10,7 +10,8 @@ defmodule MapApp.Relations do
   #require IEx
 
   def add_user(_conn, sourceUser, destinationUser) do
-    input = Relation.changeset(%Relation{}, %{sourceID: sourceUser,
+    input = Relation.changeset(%Relation{},
+                    %{sourceID: sourceUser,
                       destinationID: destinationUser,
                       status: false})
 
@@ -28,26 +29,21 @@ defmodule MapApp.Relations do
           |> Repo.all()
 
     # Relationテーブルを利用して適切なUserテーブルの行を返す
-    Enum.map(inc,
-              fn r ->
+    Enum.map(inc, fn r ->
                 User
                 |> where([u], u.id == ^r.sourceID)
                 |> Repo.one()
-
-                # IEx.pry
-              end
-            )
+              end)
   end
 
   def accept_user(_conn, sourceUser, destinationUser) do
 
     sourceUser = Integer.to_string(sourceUser)
 
-    Relation
-     |> where([u], u.sourceID == ^destinationUser)
-     |> where([u], u.destinationID == ^sourceUser)
-     |> Relation.changeset(%{status: true})
-     |> Repo.update!()
+    from(p in Relation,
+         where: p.sourceID == ^destinationUser
+         and    p.destinationID == ^sourceUser)
+    |> Repo.update_all(set: [status: true])
 
   end
 end
