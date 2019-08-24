@@ -10,6 +10,11 @@ defmodule MapAppWeb.UserController do
 
   def index(conn, _params) do
     users = Accounts.list_users()
+
+    user = Accounts.current_user(conn)
+
+    users = users -- [user]
+
     render(conn, "index.html", users: users)
   end
 
